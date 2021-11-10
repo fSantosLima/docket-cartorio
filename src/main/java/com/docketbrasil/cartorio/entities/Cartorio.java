@@ -19,10 +19,10 @@ public class Cartorio {
 	private long id;
 	
 	@NotBlank(message = "O campo nome não pode ser vazio!")
-	@Column(unique=true, name = "nome")
+	@Column(name = "nome")
 	private String nome;
 	
-	@NotBlank(message = "O campo nome não pode ser vazio!")
+	@NotBlank(message = "O campo logradouro não pode ser vazio!")
 	@Column(name = "logradouro")
 	private String logradouro;
 		

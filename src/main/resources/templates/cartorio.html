@@ -58,10 +58,12 @@
 					<div class="col-sm">
 						<label for="nome">Nome:</label> <input id="nome"
 							class="form-control" type="text" th:field="*{nome}" />
+						<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-danger"></span>
 					</div>
 					<div class="col-sm">
 						<label for="logradouro">Logradouro:</label> <input id="logradouro"
 							class="form-control" type="text" th:field="*{logradouro}" />
+						<span th:if="${#fields.hasErrors('logradouro')}" th:errors="*{logradouro}" class="text-danger"></span>							
 					</div>
 					<div class="col-sm">
 						<label for="certidoes">Tipo de certidão:</label> <select

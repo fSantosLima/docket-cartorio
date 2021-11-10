@@ -50,11 +50,12 @@ public class IndexController {
 
 	@PostMapping(value = "save")
 	public String salvarCartorio(@Validated Cartorio cartorio, BindingResult result,
-			RedirectAttributes redirectAttributes) {
+			RedirectAttributes redirectAttributes, Model model) {
 
 		if (result.hasErrors()) {
-			redirectAttributes.addFlashAttribute("message", "Ocorreu um erro ao realizar a operação.");
-			redirectAttributes.addFlashAttribute("alertClass", "alert-danger");
+			model.addAttribute("cartorios", cartorioService.findAll());
+			model.addAttribute("certidoes", certidaoService.findAll());
+			return "cartorio";
 		}
 
 		try {

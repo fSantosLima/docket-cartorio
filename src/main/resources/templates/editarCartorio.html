@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<link th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.min.css}"
+	rel="stylesheet" media="screen" />
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css"
+	rel="stylesheet" type="text/css" />
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/regular.min.css"
+	rel="stylesheet" type="text/css" />
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+	rel="stylesheet" type="text/css" />
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<style>
+.bg-purple {
+	background-color: #6B4EA5 !important;
+}
+</style>
+<section layout:fragment="conteudo">
+	<div
+		class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-light border-bottom shadow-sm .bg-light">
+		<div class="container">
+			<nav class="my-2 my-md-0 mr-md-3">
+				<img width="60px" th:src="@{/images/docket.svg}" />
+			</nav>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="title">
+			<h3>Editar Registro de Cartorio</h3>
+		</div>
+
+		<br /> <br />
+
+		<form class="container" action="/home/save" method="POST"
+			th:object="${cartorio}">
+			<input type="hidden" th:field="*{id}" />
+			<div class="form-group">
+				<div class="row">
+					<div class="col-sm">
+						<label for="nome">Nome:</label> <input id="nome"
+							class="form-control" type="text" th:field="*{nome}" />
+					</div>
+					<div class="col-sm">
+						<label for="logradouro">Logradouro:</label> <input id="logradouro"
+							class="form-control" type="text" th:field="*{logradouro}" />
+					</div>
+					<div class="col-sm">
+						<label for="certidoes">Tipo de certidão:</label> <select
+							id="certidoes" class="custom-select" th:field="*{certidao.id}">
+							<option th:each="certidao : ${certidoes}"
+								th:value="${certidao.id}" th:text="${certidao.nome}"></option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<button class="btn btn-success" type="submit">
+				<i class="fas fa-save fa-fw"></i>Salvar
+			</button>
+			<button class="btn btn-primary bg-purple float-right" onclick="window.history.go(-1); return false;">
+				<i class="fas fa-solid fa-arrow-left fa-fw"></i>Voltar
+			</button>
+		</form>
+
+	</div>
+
+	<footer class="footer mt-auto py-3 bg-purple fixed-bottom">
+		<div class="container-footer text-center">
+			<p class="text-light">
+				Sistema desenvolvido por <a
+					href="https://www.linkedin.com/in/fernando-santos-de-lima-8a2aa4209/"
+					target="_blank" rel="noreferrer"> Fernando Santos de Lima </a>
+			</p>
+		</div>
+	</footer>
+</section>
+</html>

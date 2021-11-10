@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Pagina de erro</title>
+<meta charset="utf-8" />
+<link th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.min.css}"
+	rel="stylesheet" media="screen" />
+</head>
+<style>
+	.bg-purple {
+		background-color: #6B4EA5 !important;
+	}
+</style>
+<body
+	th:with="httpStatus=${T(org.springframework.http.HttpStatus).valueOf(#response.status)}">
+	<div
+		class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-light border-bottom shadow-sm">
+		<div class="container">
+			<nav class="my-2 my-md-0 mr-md-3">
+				<img width="60px" th:src="@{/images/docket.svg}" />
+			</nav>
+		</div>
+	</div>
+	<h3>Ocorreu um erro ao carregar a aplicação. Favor verficar endpoint no arquivo.properties e tente novamente.</h3>
+	<footer class="footer mt-auto py-3 bg-purple fixed-bottom">
+		<div class="container-footer text-center">
+			<p class="text-light">
+				Sistema desenvolvido por <a
+					href="https://www.linkedin.com/in/fernando-santos-de-lima-8a2aa4209/"
+					target="_blank" rel="noreferrer"> Fernando Santos de Lima </a>
+			</p>
+		</div>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<link th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.min.css}"
+	rel="stylesheet" media="screen" />
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css"
+	rel="stylesheet" type="text/css" />
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/regular.min.css"
+	rel="stylesheet" type="text/css" />
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+	rel="stylesheet" type="text/css" />
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<style>
+	.bg-purple {
+		background-color: #6B4EA5 !important;
+	}
+</style>
+<section>
+	<script type="text/javascript">	 	
+		setTimeout(function() {
+   			 $('#alertMessage').fadeOut('slow');
+		}, 3000);	
+				
+	</script>
+	<div
+		class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-light border-bottom shadow-sm">
+		<div class="container">
+			<nav class="my-2 my-md-0 mr-md-3">				
+				<img width="60px" th:src="@{/images/docket.svg}"/>
+			</nav>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="title">
+			<h3>Cadastro de Cartórios</h3>
+		</div>
+
+		<br /> <br />
+
+		<form class="container" action="/home/save" method="POST"
+			th:object="${cartorio}">
+
+			<div id="alertMessage" th:if="${message}" th:text="${message}"
+				th:class="${'alert ' + alertClass}"></div>
+
+			<div class="form-group">
+				<div class="row">
+					<div class="col-sm">
+						<label for="nome">Nome:</label> <input id="nome"
+							class="form-control" type="text" th:field="*{nome}" />
+					</div>
+					<div class="col-sm">
+						<label for="logradouro">Logradouro:</label> <input id="logradouro"
+							class="form-control" type="text" th:field="*{logradouro}" />
+					</div>
+					<div class="col-sm">
+						<label for="certidoes">Tipo de certidão:</label> <select
+							id="certidoes" class="custom-select" th:field="*{certidao.id}">
+							<option th:each="certidao : ${certidoes}"
+								th:value="${certidao.id}" th:text="${certidao.nome}"></option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<button class="btn btn-success" type="submit">
+				<i class="fas fa-save fa-fw"></i>Salvar
+			</button>
+		</form>
+
+	</div>
+
+	<div class="container my-5">
+		<div class="title">
+			<h3>Cartórios Cadastrados</h3>
+		</div>
+		<div class="card">
+			<div th:switch="${cartorios}" class="container my-5">
+				<div class="col-md-15">
+					<div th:case="*">
+						<table class="table table-striped table-responsive-md">
+							<thead>
+								<tr>
+									<th class="format">Nome</th>
+									<th class="format">Endereço</th>
+									<th class="format">Tipo de certidão</th>
+									<th>Editar</th>
+									<th>Deletar</th>
+								</tr>
+							</thead>
+							<tbody>
+
+								<tr th:each="cartorio : ${cartorios}">
+									<td class="format" th:text="${cartorio.nome}"></td>
+									<td class="format" th:text="${cartorio.logradouro}"></td>
+									<td class="format" th:text="${cartorio.certidao.nome}"></td>
+									<td><a th:href="@{/home/edit/{id}(id=${cartorio.id})}"
+										class="btn btn-secondary"><i class="fas fa-edit"></i></a></td>
+									<td><a th:href="@{/home/delete/{id}(id=${cartorio.id})}"
+										class="btn btn-danger"
+										onclick="return confirm('Deseja realizar a exclusão ?')"><i
+											class="fas fa-trash-alt"></i></a></td>
+								</tr>
+								<tr>
+									<td align="center" colspan="5"
+										th:if="${#lists.isEmpty(cartorios)}">Nenhum cartório
+										cadastrado!</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="footer mt-auto py-3 bg-purple fixed-bottom">
+		<div class="container-footer text-center">
+			<p class="text-light">
+				Sistema desenvolvido por <a
+					href="https://www.linkedin.com/in/fernando-santos-de-lima-8a2aa4209/"
+					target="_blank" rel="noreferrer"> Fernando Santos de Lima </a>
+			</p>
+		</div>
+	</footer>
+</section>
+</html>

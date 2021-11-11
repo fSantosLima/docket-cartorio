@@ -5,9 +5,14 @@
 
 Acesso do projeto na nuvem: https://docket-brasil-cartorio.herokuapp.com/home/index
 
-Docket Brasil Cartorio é uma aplicação full stack web construída para o teste prático para uma vaga na Docket-Brasil
+Docket Brasil Cartorio é uma aplicação full stack web construída para o teste técnico para uma vaga na Docket-Brasil.
 
 A aplicação consiste em cadastrar as informações básicas de um cartório. Tais como: Nome, endereço e o tipo de certidão que o mesmo pode emitir. Estes tipos de certidões são obtidos diretamente do consumo de uma API REST disponibilizada pela própria Docket no seguinte endpoint: https://docketdesafiobackend.herokuapp.com/api/v1/certidoes
+
+O desenvolvimento consistiu em duas grandes frente:
+
+1- Desenvolvimento backend usando Spring Doot, JPA e Hibernate para acesso ao banco de dados.
+2- Desenvolvimento frontend utilizando Thymeleaf e Bootstrap.
 
 ## Layout web
 ![Web 1](https://github.com/fSantosLima/assetsRepo/blob/main/web1.PNG)
@@ -17,9 +22,40 @@ A aplicação consiste em cadastrar as informações básicas de um cartório. T
 ## Modelo conceitual
 ![Modelo Conceitual](https://github.com/fSantosLima/assetsRepo/blob/main/modelo_conceitual.PNG)
 
+
+#### application.properties
+```
+##CONFIGURA�OES DA BASE DE DADOS H2
+#spring.datasource.url=jdbc:h2:mem:testdb
+#spring.datasource.username=sa
+#spring.datasource.password=
+#spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+#spring.h2.console.enabled=true
+#spring.h2.console.path=/h2-console
+#spring.jpa.open-in-view=false
+#spring.jpa.hibernate.ddl-auto=none
+
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.hibernate.ddl-auto=create
+
+
+##CONFIGS POSTGRES HEROKU
+spring.datasource.url=jdbc:postgresql://ec2-3-86-169-29.compute-1.amazonaws.com:5432/dkmsvju4ue7ul
+spring.datasource.username=bxmhjqlibalrxo
+spring.datasource.password=aa7970f093488bf8b0bb494f1238f3ba307b0355e84dc3f94b0738b55adcd26c
+spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults=false
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQL9Dialect
+
+
+
+##ENDPOINT API DOCKET DE CERTIDOES
+certidoes.api.endpoint=https://docketdesafiobackend.herokuapp.com/api/v1/certidoes
+```
+
 # Tecnologias utilizadas
 ## Back end
-- Java
+- Java 8
 - Spring Boot
 - JPA / Hibernate
 - H2DB(Ambiente de testes / desenvolvimento) / Postgres(Ambiente de produção)
@@ -40,7 +76,7 @@ Pré-requisitos: Java 8
 git clone 
 
 # entrar na pasta do projeto 
-cd 
+cd docket-cartorio
 
 # executar o projeto
 ./mvnw spring-boot:run

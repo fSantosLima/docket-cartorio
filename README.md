@@ -1,12 +1,13 @@
-# Desafio Docket-Brasil - Projeto docket-cartorio - CRUD de Cartorios
+# Desafio Docket-Brasil - Projeto docket-cartorio - CRUD de Cartórios
 
 # Sobre o projeto
 
 Acesso do projeto na nuvem: https://docket-brasil-cartorio.herokuapp.com/home/index
 
-Docket Brasil Cartorio é uma aplicação full stack web construída para o teste técnico para uma vaga na Docket-Brasil.
+- Docket Brasil Cartório é uma aplicação full stack web, construída para o teste técnico para uma vaga na Docket-Brasil.
 
-A aplicação consiste em cadastrar as informações básicas de um cartório. Tais como: Nome, endereço e o tipo de certidão que o mesmo pode emitir. Estes tipos de certidões são obtidos diretamente do consumo de uma API REST disponibilizada pela própria Docket no seguinte endpoint: https://docketdesafiobackend.herokuapp.com/api/v1/certidoes
+
+- A aplicação consiste em cadastrar as informações básicas de um cartório, tais como: nome, endereço e o tipo de certidão que o pode ser emitida. Essas certidões são obtidas diretamente do consumo de uma API REST disponibilizada pela própria Docket no seguinte endpoint: https://docketdesafiobackend.herokuapp.com/api/v1/certidoes
 
 O desenvolvimento consistiu em duas grandes frentes:
 
@@ -60,7 +61,7 @@ certidoes.api.endpoint=https://docketdesafiobackend.herokuapp.com/api/v1/certido
 - Java 8
 - Spring Boot
 - JPA / Hibernate
-- H2DB(Ambiente de testes / desenvolvimento) / Postgres(Ambiente de produção)
+- H2DB (Ambiente de testes / desenvolvimento) / Postgres (Ambiente de produção)
 - Maven
 ## Front end
 - Thymeleaf

@@ -1,5 +1,4 @@
 # Teste Docket-Brasil - Projeto docket-cartorio - CRUD de Cartorios
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/neliocursos/exemplo-readme/blob/main/LICENSE) 
 
 # Sobre o projeto
 
@@ -22,7 +21,7 @@ O desenvolvimento consistiu em duas grandes frente:
 ## Modelo conceitual
 ![Modelo Conceitual](https://github.com/fSantosLima/assetsRepo/blob/main/modelo_conceitual.PNG)
 
-
+Abaixo segue as configurações do arquivo de propriedades do sistema. Neste arquivo, contém as configurações de acesso a base H2(desenvolvimento) e base Postgres(Produção). O mesmo se encontra configurado para acessar a base na nuvem(Heroku).
 #### application.properties
 ```
 ##CONFIGURA�OES DA BASE DE DADOS H2
@@ -37,7 +36,7 @@ O desenvolvimento consistiu em duas grandes frente:
 
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
-spring.jpa.hibernate.ddl-auto=create
+
 
 
 ##CONFIGS POSTGRES HEROKU
@@ -46,7 +45,7 @@ spring.datasource.username=bxmhjqlibalrxo
 spring.datasource.password=aa7970f093488bf8b0bb494f1238f3ba307b0355e84dc3f94b0738b55adcd26c
 spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults=false
 spring.jpa.database-platform=org.hibernate.dialect.PostgreSQL9Dialect
-
+spring.jpa.hibernate.ddl-auto=create
 
 
 ##ENDPOINT API DOCKET DE CERTIDOES
@@ -73,13 +72,15 @@ Pré-requisitos: Java 8
 
 ```bash
 # clonar repositório
-git clone 
+git clone https://github.com/fSantosLima/docket-cartorio.git
 
 # entrar na pasta do projeto 
 cd docket-cartorio
 
 # executar o projeto
 ./mvnw spring-boot:run
+
+acessar a aplicação na seguinte url: http://localhost:8080/home/index
 ```
 
 # Autor

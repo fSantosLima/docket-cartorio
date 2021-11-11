@@ -10,9 +10,9 @@ Docket Brasil Cartorio é uma aplicação full stack web construída para o test
 A aplicação consiste em cadastrar as informações básicas de um cartório. Tais como: Nome, endereço e o tipo de certidão que o mesmo pode emitir. Estes tipos de certidões são obtidos diretamente do consumo de uma API REST disponibilizada pela própria Docket no seguinte endpoint: https://docketdesafiobackend.herokuapp.com/api/v1/certidoes
 
 ## Layout web
-![Web 1](https://github.com/acenelio/assets/raw/main/sds1/web1.png)
+![Web 1](https://github.com/fSantosLima/assetsRepo/blob/main/web1.PNG)
 
-![Web 2](https://github.com/acenelio/assets/raw/main/sds1/web2.png)
+![Web 2](https://github.com/fSantosLima/assetsRepo/blob/main/web2.PNG)
 
 ## Modelo conceitual
 ![Modelo Conceitual](https://github.com/fSantosLima/assetsRepo/blob/main/modelo_conceitual.PNG)
@@ -22,16 +22,13 @@ A aplicação consiste em cadastrar as informações básicas de um cartório. T
 - Java
 - Spring Boot
 - JPA / Hibernate
+- H2DB(Ambiente de testes / desenvolvimento) / Postgres(Ambiente de produção)
 - Maven
 ## Front end
-- HTML / CSS / JS / TypeScript
-- ReactJS
-- React Native
-- Apex Charts
-- Expo
+- Thymeleaf
+- Bootstrap
 ## Implantação em produção
-- Back end: Heroku
-- Front end web: Netlify
+- Heroku
 - Banco de dados: Postgresql
 
 # Como executar o projeto

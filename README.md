@@ -10,9 +10,9 @@ A aplicação consiste em cadastrar as informações básicas de um cartório, t
 
 O desenvolvimento consistiu em duas grandes frentes:
 
-1- Desenvolvimento backend utilizando Spring Boot, JPA e Hibernate para acesso ao banco de dados.
+1- Desenvolvimento backend utilizando Spring Boot, JPA e Hibernate para acesso ao banco de dados;
 
-2- Desenvolvimento frontend utilizando Thymeleaf e Bootstrap.
+2- Desenvolvimento frontend utilizando Thymeleaf e Bootstrap;
 
 ## Layout web
 ![Web 1](https://github.com/fSantosLima/assetsRepo/blob/main/web1.PNG)

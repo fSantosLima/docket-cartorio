@@ -8,9 +8,10 @@ Docket Brasil Cartorio é uma aplicação full stack web construída para o test
 
 A aplicação consiste em cadastrar as informações básicas de um cartório. Tais como: Nome, endereço e o tipo de certidão que o mesmo pode emitir. Estes tipos de certidões são obtidos diretamente do consumo de uma API REST disponibilizada pela própria Docket no seguinte endpoint: https://docketdesafiobackend.herokuapp.com/api/v1/certidoes
 
-O desenvolvimento consistiu em duas grandes frente:
+O desenvolvimento consistiu em duas grandes frentes:
 
 1- Desenvolvimento backend usando Spring Doot, JPA e Hibernate para acesso ao banco de dados.
+
 2- Desenvolvimento frontend utilizando Thymeleaf e Bootstrap.
 
 ## Layout web

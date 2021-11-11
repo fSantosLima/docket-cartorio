@@ -1,16 +1,13 @@
-# Big Game Survey 
+# Teste Docket-Brasil - Projeto docket-cartorio - CRUD de Cartorios
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/neliocursos/exemplo-readme/blob/main/LICENSE) 
 
 # Sobre o projeto
 
-https://wmazoni-sds1.netlify.app
+Acesso do projeto na nuvem: https://docket-brasil-cartorio.herokuapp.com/home/index
 
-Big Game Survey é uma aplicação full stack web e mobile construída durante a 1ª edição da **Semana DevSuperior** (#sds1), evento organizado pela [DevSuperior](https://devsuperior.com "Site da DevSuperior").
+Docket Brasil Cartorio é uma aplicação full stack web construída para o teste prático para uma vaga na Docket-Brasil
 
-A aplicação consiste em uma pesquisa de preferência de games, onde os dados são coletados no app mobile, e depois são listados no app web, que também apresenta um dashboard com gráficos baseados nestes dados.
-
-## Layout mobile
-![Mobile 1](https://github.com/acenelio/assets/raw/main/sds1/mobile1.png) ![Mobile 2](https://github.com/acenelio/assets/raw/main/sds1/mobile2.png)
+A aplicação consiste em cadastrar as informações básicas de um cartório. Tais como: Nome, endereço e o tipo de certidão que o mesmo pode emitir. Estes tipos de certidões são obtidos diretamente do consumo de uma API REST disponibilizada pela própria Docket no seguinte endpoint: https://docketdesafiobackend.herokuapp.com/api/v1/certidoes
 
 ## Layout web
 ![Web 1](https://github.com/acenelio/assets/raw/main/sds1/web1.png)
@@ -18,7 +15,7 @@ A aplicação consiste em uma pesquisa de preferência de games, onde os dados s
 ![Web 2](https://github.com/acenelio/assets/raw/main/sds1/web2.png)
 
 ## Modelo conceitual
-![Modelo Conceitual](https://github.com/acenelio/assets/raw/main/sds1/modelo-conceitual.png)
+![Modelo Conceitual](https://github.com/fSantosLima/assetsRepo/blob/main/modelo_conceitual.PNG)
 
 # Tecnologias utilizadas
 ## Back end

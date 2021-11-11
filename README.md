@@ -4,10 +4,9 @@
 
 Acesso do projeto na nuvem: https://docket-brasil-cartorio.herokuapp.com/home/index
 
-- Docket Brasil Cartório é uma aplicação full stack web, construída para o teste técnico para uma vaga na Docket-Brasil.
+Docket Brasil Cartório é uma aplicação full stack web, construída para o teste técnico para uma vaga na Docket-Brasil.
 
-
-- A aplicação consiste em cadastrar as informações básicas de um cartório, tais como: nome, endereço e o tipo de certidão que o pode ser emitida. Essas certidões são obtidas diretamente do consumo de uma API REST disponibilizada pela própria Docket no seguinte endpoint: https://docketdesafiobackend.herokuapp.com/api/v1/certidoes
+A aplicação consiste em cadastrar as informações básicas de um cartório, tais como: nome, endereço e o tipo de certidão que o pode ser emitida. Essas certidões são obtidas diretamente do consumo de uma API REST disponibilizada pela própria Docket no seguinte endpoint: https://docketdesafiobackend.herokuapp.com/api/v1/certidoes
 
 O desenvolvimento consistiu em duas grandes frentes:
 

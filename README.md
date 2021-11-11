@@ -22,7 +22,9 @@ O desenvolvimento consistiu em duas grandes frentes:
 ## Modelo conceitual
 ![Modelo Conceitual](https://github.com/fSantosLima/assetsRepo/blob/main/modelo_conceitual.PNG)
 
-Abaixo segue as configurações do arquivo de propriedades do sistema. Neste arquivo, contém as configurações de acesso a base H2(desenvolvimento) e base Postgres(Produção). O mesmo se encontra configurado para acessar a base na nuvem(Heroku).
+Abaixo segue as configurações do arquivo de propriedades do sistema. Neste arquivo, contém as configurações de acesso a base H2(desenvolvimento) e base Postgres(Produção). O mesmo se encontra configurado para acessar a base na nuvem(Heroku). Neste arquivo contém também o endpoint da API de certidões que a aplicação consome para relacionar aos cartórios.
+
+
 #### application.properties
 ```
 ##CONFIGURA�OES DA BASE DE DADOS H2
